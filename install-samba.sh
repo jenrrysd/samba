@@ -5,8 +5,8 @@
 sudo dnf install samba -y
 sudo systemctl enable smb --now
 
-server=`(firewall-cmd --get-active-zones | head -n1)`
-sudo firewall-cmd --permanent --zone=$server --add-service=samba
+##agregar samba al firewall
+sudo firewall-cmd --permanent --add-service=samba
 sudo firewall-cmd --reload
 
 ##creamos el usuario; sambauser
